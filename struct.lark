@@ -1,0 +1,18 @@
+entry: struct
+
+identifier: /[_a-zA-Z][_a-zA-Z0-9]*/
+
+var_type: identifier
+
+declaration: var_type identifier ";"
+
+struct: "struct" [ identifier ] "{" (declaration)* "}" ";"
+
+%import common.LETTER
+%import common.DIGIT
+%import common.WS
+%import common.CPP_COMMENT
+%import common.C_COMMENT
+%ignore WS
+%ignore C_COMMENT
+%ignore CPP_COMMENT
